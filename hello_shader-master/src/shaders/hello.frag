@@ -1,10 +1,8 @@
-#version 150
-
-uniform vec4 Color = vec4 (1,1,0,1);
+#version 130
 
 out vec4 fragColor;
 
 void main ()
 {              
-    fragColor = Color; //vec4 (1, 1, 0, 1); //yellow triangle
+  fragColor = vec4 (1, 0, 0, 1);
 }

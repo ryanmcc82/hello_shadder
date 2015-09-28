@@ -1,1 +1,1 @@
-/Users/amalee/Documents/CS470/hello_shader/CMakeFiles/hello_shader.dir
+/home/ryan/Code/graphics_cs470/hello_shadder/hello_shader-master/CMakeFiles/hello_shader.dir

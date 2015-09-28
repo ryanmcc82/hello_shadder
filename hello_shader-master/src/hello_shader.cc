@@ -57,11 +57,9 @@ int main (int argc, char **argv)
  vert.push_back (Pt2(-1.,-1.));   // revealing OpenGL's screen coordinate system
  vert.push_back (Pt2( 1.,-1.));
  vert.push_back (Pt2( 0., 1.));
-    
-    vert.push_back (Pt2(-1.,-1.)); //lower left
-    vert.push_back (Pt2( 0.,1.)); //upper right
-    vert.push_back (Pt2( -0.7, 0.8)); //upper left point on small triangle
-    
+    vert.push_back(Pt2(-1.,-1.)); //lower left
+    vert.push_back(Pt2(0., 1.)); // upper right
+    vert.push_back(Pt2(-0.7, 0.8)); //upper left point on small trianlg
  Viewer viewer;
  viewer.vert_ = vert;
  viewer.init ();

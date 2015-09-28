@@ -81,13 +81,7 @@ void Viewer::initGLFW (const char* title_bar)
 				    title_bar, NULL, NULL);
   if (!glass_.window)
     { glfwTerminate (); throw runtime_error ("problem creating GLFW window"); }
-    
-    ifstream stateFile ("viewerState.txt");
-    float x;
-    float y;
-    stateFile >> x >> y;
-    
-  glfwSetWindowPos (glass_.window, x, y);
+  glfwSetWindowPos (glass_.window, glass_.window_pos[0], glass_.window_pos[1]);
   glfwMakeContextCurrent (glass_.window);
   glfwSwapInterval (1);
   glfwSetKeyCallback             (glass_.window, key_callback);
@@ -138,10 +132,7 @@ void Viewer::framebuffer_size_callback (GLFWwindow* window, int w, int h)
 /******************************************************************************/
   
 void Viewer::initGeometry ()
-
 {
-    
-    
   // wrap vbos up in a vertex array object, outside the display loop
   glGenVertexArrays (1, vao_);             // generate 1 VAO and return its name
   glBindVertexArray (vao_[0]);
@@ -168,49 +159,28 @@ void Viewer::initGeometry ()
   // unbind the VAO
   glBindVertexArray (0); 
 }
-    
-    
-    void newCallBack(GLFWwindow* window, int x, int y){
-        ofstream stateFile;
-        stateFile.open ("viewerState.txt");
-        stateFile << x << "\n" << y;
-        stateFile.close();
-    }
-    
 /******************************************************************************/
 void Viewer::display ()
 {
   while (!glfwWindowShouldClose (glass_.window))
    {
-       
-       glfwSetWindowPosCallback(glass_.window, newCallBack);
-       
-       GLint location = glGetUniformLocation(curtain_.get_program_h(), "Color");
-           glUniform4f(location,1.0,1.0,0.0,1.0);
-       
     glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glUseProgram (curtain_.get_program_h());
 
     glEnableVertexAttribArray (0);
     glBindVertexArray (vao_[0]);
 
-    glDrawArrays (GL_TRIANGLES, 0, 3);
-       
-       glUniform4f(location,1.0,0.0,0.0,1.0);
-       
-       glDrawArrays (GL_TRIANGLES, 3, 3);
+    glDrawArrays (GL_TRIANGLES, 0, vert_.size());
 
     glDisableVertexAttribArray (0);
 
     glfwPollEvents ();
     glfwSwapBuffers (glass_.window);
-       
    }
   freeMemory ();
   glfwDestroyWindow (glass_.window);
   glfwTerminate ();
 }
-
 
 /***************************************************************************//**
 \brief Free memory for objects that have been allocated so far.

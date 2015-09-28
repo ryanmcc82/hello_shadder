@@ -1,4 +1,4 @@
-#version 150                                         // GLSL 1.50 for OpenGL 3.2
+#version 130                                         // GLSL 1.50 for OpenGL 3.2
                                                      // GLSL 1.30 for OpenGL 3.0
 
 // uniform mat4 mvpMatrix;

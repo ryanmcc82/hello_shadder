@@ -1,4 +1,4 @@
-file(REMOVE_RECURSE
+FILE(REMOVE_RECURSE
   "CMakeFiles/hello_shader.dir/src/hello_shader.o"
   "CMakeFiles/hello_shader.dir/src/viewer.o"
   "CMakeFiles/hello_shader.dir/src/interface.o"
@@ -8,6 +8,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
-  include(CMakeFiles/hello_shader.dir/cmake_clean_${lang}.cmake OPTIONAL)
-endforeach()
+FOREACH(lang CXX)
+  INCLUDE(CMakeFiles/hello_shader.dir/cmake_clean_${lang}.cmake OPTIONAL)
+ENDFOREACH(lang)
