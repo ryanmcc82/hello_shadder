@@ -18,6 +18,7 @@ CMakeFiles/hello_shader.dir/src/interface.o
  include/typedefs_eigen.h
 CMakeFiles/hello_shader.dir/src/viewer.o
  /home/ryan/Code/graphics_cs470/hello_shadder/hello_shader-master/src/viewer.cc
+ /usr/local/include/GLFW/glfw3.h
  include/gl_support.h
  include/interface.h
  include/typedefs_eigen.h

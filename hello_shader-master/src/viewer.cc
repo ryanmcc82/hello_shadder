@@ -164,13 +164,25 @@ void Viewer::display ()
 {
   while (!glfwWindowShouldClose (glass_.window))
    {
-    glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+       //ADDED
+       GLint location = glGetUniformLocation(curtain_.get_program_h(), "Color");
+       glUniform4f(location, 1.0, 1.0, 0.0, 1.0);
+       //END ADDED
+
+
+       glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glUseProgram (curtain_.get_program_h());
 
     glEnableVertexAttribArray (0);
     glBindVertexArray (vao_[0]);
 
-    glDrawArrays (GL_TRIANGLES, 0, vert_.size());
+       //ADDED
+       glDrawArrays (GL_TRIANGLES, 0, 3);
+       glUniform4f(location, 1.0, 0.0, 0.0, 1.0);
+       glDrawArrays (GL_TRIANGLES, 3, 3);
+       //END ADDED
+
+    //glDrawArrays (GL_TRIANGLES, 0, vert_.size()); //Replaced
 
     glDisableVertexAttribArray (0);
 

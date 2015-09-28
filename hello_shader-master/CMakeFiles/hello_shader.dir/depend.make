@@ -17,6 +17,7 @@ CMakeFiles/hello_shader.dir/src/interface.o: include/interface.h
 CMakeFiles/hello_shader.dir/src/interface.o: include/typedefs_eigen.h
 
 CMakeFiles/hello_shader.dir/src/viewer.o: src/viewer.cc
+CMakeFiles/hello_shader.dir/src/viewer.o: /usr/local/include/GLFW/glfw3.h
 CMakeFiles/hello_shader.dir/src/viewer.o: include/gl_support.h
 CMakeFiles/hello_shader.dir/src/viewer.o: include/interface.h
 CMakeFiles/hello_shader.dir/src/viewer.o: include/typedefs_eigen.h

@@ -6,11 +6,29 @@
 
 #IncludeRegexTransform: 
 
-/home/ryan/Code/graphics_cs470/hello_shadder/hello_shader-master/src/hello_shader.cc
+/home/ryan/Code/graphics_cs470/hello_shadder/hello_shader-master/src/viewer.cc
+cmath
+-
+cstdlib
+-
 iostream
+-
+fstream
+-
+vector
+-
+stdexcept
+-
+GL/glew.h
+-
+GLFW/glfw3.h
 -
 typedefs_eigen.h
 /home/ryan/Code/graphics_cs470/hello_shadder/hello_shader-master/src/typedefs_eigen.h
+interface.h
+/home/ryan/Code/graphics_cs470/hello_shadder/hello_shader-master/src/interface.h
+gl_support.h
+/home/ryan/Code/graphics_cs470/hello_shadder/hello_shader-master/src/gl_support.h
 viewer.h
 /home/ryan/Code/graphics_cs470/hello_shadder/hello_shader-master/src/viewer.h
 
@@ -49,6 +67,22 @@ GL/glext.h
 -
 GL/glu.h
 -
+
+include/gl_support.h
+cmath
+-
+ctime
+-
+cstdlib
+-
+iostream
+-
+string
+-
+vector
+-
+typedefs_eigen.h
+include/typedefs_eigen.h
 
 include/interface.h
 cmath
