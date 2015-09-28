@@ -1,0 +1,41 @@
+CS 470 homework
+
+1. change the color of the triangle
+
+in hello.frag,
+
+changed fragColor = vec4 (1, 0, 0, 1); //red triangle
+to fragColor = vec4 (1, 1, 0, 1); //yellow triangle
+
+2. draw a second triangle
+
+in hello_shader.cc
+
+changed 
+
+vector<Pt2> vert;
+ vert.push_back (Pt2(-1,-1.));   // revealing OpenGL's screen coordinate system
+ vert.push_back (Pt2( 1.,-1.));   //coordinates
+ vert.push_back (Pt2( 0., 1.));    
+ Viewer viewer;
+ viewer.vert_ = vert;
+ viewer.init ();
+ return 0;
+
+to 
+
+vector<Pt2> vert;
+ vert.push_back (Pt2(-1,-1.));   // revealing OpenGL's screen coordinate system
+ vert.push_back (Pt2( 1.,-1.));   //coordinates
+ vert.push_back (Pt2( 0., 1.));
+    
+vert.push_back (Pt2(-.5,0)); //lower left
+vert.push_back (Pt2( -.25,.5)); //upper right
+vert.push_back (Pt2( -0.7, 0.8)); //upper left point on small triangle
+    
+ Viewer viewer;
+ viewer.vert_ = vert;
+ viewer.init ();
+ return 0;
+
+and used y = mx + b to calculate proper vertices for the triangle
